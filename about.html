@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(0, 10, 19);
+        }
+        header{
+            width: 100%;
+            height: 800px;
+            background-color: skyblue;
+            position: relative;
+            display: flex;
+            align-items: last baseline;
+            justify-content: flex-start;
+            margin-bottom: 150px;
+        }
+        .navigation{
+            width: 100%;
+            height: 60px;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            position: fixed;
+            top: 0;
+            z-index: 10;
+            left: 0;
+        }
+        .mobile-menu{
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: auto;
+            background-color: rgb(0, 12, 36);
+            z-index: 10;
+            padding: 70px 20px;
+            transform: translateY(-450px);
+            transition: all 1s ease-in-out;
+        }
+        .mobile-menu.active{
+            transform: translateY(0);
+        }
+        .mobile-menu nav ul{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .fa-bars{
+            display: none;
+        }
+        .logo{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .logo a{
+            text-decoration: none;
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        nav ul{
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        nav ul a{
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            text-decoration: none;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .header-bg-video{
+            object-fit: cover;
+            filter: brightness(30%);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        @media (min-aspect-ratio: 16/9){
+            video{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        @media (max-aspect-ratio: 16/9){
+            video{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .latest-post-header{
+            z-index: 10;
+            margin: 50px;
+            font-size: 30px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            
+        }
+        .latest-post-header a{
+            color: white;
+            text-decoration: none;
+        }
+        .luminance{
+            position: fixed;
+            width: 80%;
+            height: 500px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 200px rgba(0, 81, 152, 0.6);
+            top: 300px;
+            left: 150px;
+            background: rgba(0, 81, 152, 0.3);
+            z-index: -1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        main{
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 100px;
+        }
+        section{
+            width: 50%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        section img{
+            width: 80%;
+            height: 400px;
+            object-fit: cover;
+
+        }
+        footer{
+            width: 100%;
+            background-color: rgb(0, 12, 36);
+            height: auto;
+            display: flex;
+            gap: 150px;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 0;
+            flex-wrap: wrap;
+        }
+        footer div{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            color: white;
+            padding: 50px ;
+        }
+        footer div a{
+            font-size: 20px;
+            font-family: sans-serif;
+            text-decoration: none;
+            color: white;
+        }
+        @media (max-width:900px){
+            .resizable{
+                display: none;
+            }
+            main{
+                gap: 30px;
+            }
+            section{
+                width: 100%;
+            }
+            .navigation nav{
+                display: none;
+            }
+            .fa-bars{
+                display: block;
+            }
+            footer{
+                gap: 30px;
+                align-items: flex-start;
+                justify-content: flex-start;
+                margin-top: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="navigation">
+            <div class="logo">
+                <h2><a href="index.html">Health and fitness</a></h2>
+                <i class="fa-solid fa-dumbbell" style="color: white;"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="">Join</a></li>
+                    <li><a href="store.html">Store</a></li>
+                </ul>
+            </nav>
+            <i class="fa-solid fa-bars mobile-menu-toggle" style="color: white;font-size: 30px;cursor: pointer;"></i>
+        </div>
+
+        <video src="Videos/man doing pushups.mp4" autoplay loop class="header-bg-video"></video>
+
+        <div class="latest-post-header">
+            <h1>About</h1>
+        </div>
+
+        <div class="mobile-menu">
+            <nav>
+                <ul>
+                    <li style="color: white;font-size: 30px;cursor: pointer;" class="mobile-menu-toggle">X</li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="">Join</a></li>
+                    <li><a href="store.html">Store</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="luminance">
+        <h1 style="color: transparent;-webkit-text-stroke: 2px rgb(0, 81, 255);font-size: 40px;">Health and Fitness</h1>
+    </div>
+
+    <main>
+        <section>
+            <img src="images/strong man.jpg" alt="muscular man showing back">
+            <article>Greetings and welcome to our health and fitness website! Our website is dedicated to providing you with comprehensive and up-to-date information on all aspects of health and fitness. We believe that living a healthy and active lifestyle is essential for overall well-being, and our team of experts is here to help you achieve your goals and live your best life.</article>
+        </section>
+        <section class="resizable"></section>
+        <section class="resizable"></section>
+        <section>
+            <img src="images/trainer with woman in gym.jpg" alt="woman doing exercise with trainer">
+            <article>Our team consists of certified personal trainers, nutritionists, and health professionals who are committed to providing you with the latest and most effective health and fitness solutions. We understand that every individual is unique, and that's why we offer a wide variety of resources, tools, and personalized plans to cater to your specific needs.</article>
+        </section>
+        <section>
+            <img src="images/overweight woman with dumbell.jpg" alt="overweight woman with dumbell" style="height: 600px;">
+            <article>Our website features a wealth of information on everything from exercise routines and healthy diets to stress management and mental health. We believe that health and wellness go beyond just physical fitness, and we strive to provide you with a holistic approach to living a healthy and fulfilling life.</article>
+        </section>
+        <section class="resizable"></section>
+        <section>
+            <img src="images/person motivated.jpg" alt="satisfied young asian sportsman" style="height: 600px;">
+            <article>We're passionate about helping you achieve your goals and providing you with the support and guidance you need to reach your full potential. We're here to help you every step of the way, ensuring that you have access to the best resources and knowledge to help you make informed decisions about your health and wellness. <br>
+                <br>
+            Thank you for choosing our website as your go-to source for all things health and fitness. We're excited to be a part of your health journey and look forward to helping you achieve your goals!</article>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <a href="contact.html">Contact</a>
+            <a href="#">Join</a>
+            <a href="#">Blog</a>
+            <a href="store.html">Store</a>
+        </div>
+        <div>
+            <h2><a href="index.html">Health and Fitness</a></h2>
+            <i class="fa-solid fa-dumbbell"></i>
+            <a href="#">Privacy policy</a>
+            <h3>Copyright 2024&copy;</h3>
+        </div>
+        <div>
+            <h3>Help center</h3>
+            <a href="#">Call us: +254-712-345-678</a>
+            <a href="#">Chat with us</a>
+            <a href="#">FAQs</a>
+            <h3 style="display: flex;gap: 10px;"> 
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+             </h3>
+        </div>
+        <span style="width: 100%;text-align: right;font-size: 30px;"><a href="https://meshacklocho.co.ke/" style="color: transparent;text-decoration: none;-webkit-text-stroke: 1px white;">MESHDEV DESIGNS &copy;</a></span>
+    </footer>
+
+    <script>
+        let menuToggleBtns = document.querySelectorAll(".mobile-menu-toggle")
+        let mobileMenu = document.querySelector(".mobile-menu")
+
+        for (let i = 0; i < menuToggleBtns.length; i++) {
+            menuToggleBtns[i].addEventListener("click", ()=>{
+                mobileMenu.classList.toggle("active")
+            })
+            
+        }
+    </script>
+</body>
+</html>

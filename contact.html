@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="blog website.css">
+    <!-- <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(0, 10, 19);
+        }
+        header{
+            width: 100%;
+            height: 800px;
+            background-color: skyblue;
+            position: relative;
+            display: flex;
+            align-items: last baseline;
+            justify-content: flex-start;
+            margin-bottom: 150px;
+        }
+        .navigation{
+            width: 100%;
+            height: 60px;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            position: fixed;
+            top: 0;
+            z-index: 10;
+            left: 0;
+        }
+        .mobile-menu{
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: auto;
+            background-color: rgb(0, 12, 36);
+            z-index: 10;
+            padding: 70px 20px;
+            transform: translateY(-450px);
+            transition: all 1s ease-in-out;
+        }
+        .mobile-menu.active{
+            transform: translateY(0);
+        }
+        .mobile-menu nav ul{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .fa-bars{
+            display: none;
+        }
+        .logo{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .logo a{
+            text-decoration: none;
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        nav ul{
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        nav ul a{
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            text-decoration: none;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .header-bg-video{
+            object-fit: cover;
+            filter: brightness(30%);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        @media (min-aspect-ratio: 16/9){
+            video{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        @media (max-aspect-ratio: 16/9){
+            video{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .latest-post-header{
+            z-index: 10;
+            margin: 50px;
+            font-size: 30px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            
+        }
+        .latest-post-header a{
+            color: white;
+            text-decoration: none;
+        }
+        .luminance{
+            position: fixed;
+            width: 80%;
+            height: 500px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 200px rgba(0, 81, 152, 0.6);
+            top: 300px;
+            left: 150px;
+            background: rgba(0, 81, 152, 0.3);
+            z-index: -1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        main{
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 10px 0;
+        }
+        #contact-form{
+            width: 80%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            background-color: rgb(0, 10, 19);
+            color: white;
+            position: relative;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 17px;
+            font-family: fantasy;
+            letter-spacing: 3px;
+        }
+        #contact-form input[type="text"], input[type="email"]{
+            width: 70%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+        }
+        #contact-form input[type="submit"]{
+            width: 30%;
+            padding: 10px;
+            cursor: pointer;
+            background-color: rgb(0, 10, 19);
+            box-shadow: 0px 0px 20px rgba(0, 81, 255, 0.6);
+            border: none;
+            font-size: 20px;
+            color: white;
+            border-radius: 10px;
+        }
+        #contact-form textarea{
+            padding: 20px;
+            width: 70%;
+            height: 300px;
+            
+        }
+        #contact-form::before{
+            content: "";
+            width: 20%;
+            height: 100px;
+            position: absolute;
+            left: 5px;
+            top: -5px;
+            z-index: -1;
+            background: conic-gradient(transparent 270deg, rgb(0, 94, 246), transparent);
+            animation: rotateBorder 2s infinite ease;
+            border-radius: 10px 10px;
+        }
+        @keyframes rotateBorder{
+            0%{
+                transform: translateX(0px);
+            }
+            25%{
+                transform: translateX(913px);
+            }
+            50%{
+                transform: translateX(913px) translateY(678px);
+            }
+            75%{
+                transform: translateX(-2px) translateY(678px);
+            }
+            100%{
+                transform: translateY(0px) translateX(-13px);
+            }
+        }
+        footer{
+            width: 100%;
+            background-color: rgb(0, 12, 36);
+            height: auto;
+            display: flex;
+            gap: 150px;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 0;
+            flex-wrap: wrap;
+        }
+        footer div{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            color: white;
+            padding: 50px ;
+        }
+        footer div a{
+            font-size: 20px;
+            font-family: sans-serif;
+            text-decoration: none;
+            color: white;
+        }
+        @media (max-width:900px){
+            form{
+                width: 100%;
+            }
+            .luminance{
+                left: 50px;
+            }
+            .navigation nav{
+                display: none;
+            }
+            .fa-bars{
+                display: block;
+            }
+            footer{
+                gap: 30px;
+                align-items: flex-start;
+                justify-content: flex-start;
+                margin-top: 50px;
+            }
+        }
+    </style> -->
+</head>
+<body>
+    <header id="header">
+        <div class="navigation">
+            <div class="logo">
+                <h2><a href="index.html">Health and fitness</a></h2>
+                <i class="fa-solid fa-dumbbell" style="color: white;"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#">Join</a></li>
+                    <li><a href="store.html">Store</a></li>
+                </ul>
+            </nav>
+            <i class="fa-solid fa-bars mobile-menu-toggle" style="color: white;font-size: 30px;cursor: pointer;"></i>
+        </div>
+
+        <div class="mobile-menu">
+            <nav>
+                <ul>
+                    <li style="color: white;font-size: 30px;cursor: pointer;" class="mobile-menu-toggle">X</li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#">Join</a></li>
+                    <li><a href="store.html">Store</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <video src="Videos/forest rainy.mp4" autoplay loop class="header-bg-video"></video>
+
+        <div class="latest-post-header">
+            <h1>Contact</h1>
+        </div>
+    </header>
+
+    <div class="luminance">
+        <h1 style="color: transparent;-webkit-text-stroke: 2px rgb(0, 81, 255);font-size: 40px;">Health and Fitness</h1>
+    </div>
+
+    <main>
+        <form action="https://api.web3forms.com/submit" method="post" id="contact-form">
+            <input type="hidden" name="access_key" value="33b6bf10-a89e-40dd-bb51-718c6f668d76">
+            <label for="name">Name</label>
+            <input type="text" name="Name" id="name" placeholder="Enter your name" required>
+            <label for="email">Email</label>
+            <input type="email" name="Email" id="email" placeholder="Enter your email" required>
+            <label for="message">Write your message</label>
+            <textarea name="Message" id="message" placeholder="Your message"></textarea>
+            <input type="submit" value="Send">
+        </form>
+    </main>
+    <footer>
+        <div>
+            <a href="contact.html">Contact</a>
+            <a href="#">Join</a>
+            <a href="#">Blog</a>
+            <a href="store.html">Store</a>
+        </div>
+        <div>
+            <h2><a href="index.html">Health and Fitness</a></h2>
+            <i class="fa-solid fa-dumbbell"></i>
+            <a href="#">Privacy policy</a>
+            <h3>Copyright 2024&copy;</h3>
+        </div>
+        <div>
+            <h3>Help center</h3>
+            <a href="#">Call us: +254-714-352-684</a>
+            <a href="#">Chat with us</a>
+            <a href="#">FAQs</a>
+            <h3 style="display: flex;gap: 10px;"> 
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+             </h3>
+        </div>
+        <span style="width: 100%;text-align: right;font-size: 30px;"><a href="https://meshacklocho.co.ke/" style="color: transparent;text-decoration: none;-webkit-text-stroke: 1px white;">MESHDEV DESIGNS &copy;</a></span>
+    </footer>
+
+    <script>
+        let menuToggleBtns = document.querySelectorAll(".mobile-menu-toggle")
+        let mobileMenu = document.querySelector(".mobile-menu")
+
+        for (let i = 0; i < menuToggleBtns.length; i++) {
+            menuToggleBtns[i].addEventListener("click", ()=>{
+                mobileMenu.classList.toggle("active")
+            })
+            
+        }
+    </script>
+</body>
+</html>
